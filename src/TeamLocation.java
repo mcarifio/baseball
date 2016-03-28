@@ -1,5 +1,5 @@
 /**
- * Created by mcarifio on 3/25/16.
+ * Not used yet.
  */
 public enum TeamLocation {
     VISTOR, HOME;

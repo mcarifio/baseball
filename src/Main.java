@@ -31,8 +31,11 @@ public class Main {
                 new Player("center"),
                 new Player("right")));
 
-        Game g = new Game(new Diamond("Fenway",redsox, yankees));
+        // Play a game, g, at Fenway. RedSox host the dreaded Yankees.
+        Game g = new Game(new Diamond("Fenway",yankees, redsox));
+        // Play the game, getting a final score.
         Score s = g.play();
+        // Announce the score.
         System.out.println(s);
     }
 }

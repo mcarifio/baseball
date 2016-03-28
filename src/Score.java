@@ -1,11 +1,13 @@
 /**
- * Created by mcarifio on 3/24/16.
+ * A game's score, a pair of integers >=0. Visiting team is listed first, home team listed second.
+ * TODO: associate a score with a FieldedTeam instead?
  */
 public class Score {
 
     private int visitor = 0;
     private int home = 0;
 
+    // Separate init method, not always useful.
     private void init(int visitor, int home) {
         this.visitor = visitor; this.home = home;
     }

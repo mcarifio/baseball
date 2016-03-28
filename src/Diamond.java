@@ -1,7 +1,13 @@
 import java.util.Arrays;
 
+
+/**
+ * A baseball game is played on a diamond. A diamond is at a particular location, like "Boston" or "New York".
+ * A diamond hosts two teams for a game. The visiting team can be anyone, but the home team is usually the same,
+ * for example the RedSox are always the home team at Fenway Park.
+ */
 public class Diamond {
-    private String name; // finalize during ctor?
+    private final String name;
     FieldedTeam[] teams = new FieldedTeam[2];
     int at_bat = 0;
 
@@ -22,7 +28,7 @@ public class Diamond {
     }
 
     public FieldedTeam home() {
-        return this.teams[0];
+        return this.teams[1];
     }
 
 }

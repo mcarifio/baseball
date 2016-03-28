@@ -16,15 +16,16 @@ public class Inning {
         int outs = 0;
         Player[] bases = new Player[3]; // bases are empty
         int score = 0; // no scores
-        int onbase = 0; // noo ne on base
+        int onbase = 0; // no one on base
 
         while (outs < 3) {
             Player batter = offense.nextBatter();
             int hit = batter.hit();
+            System.out.println(offense.name() + " " + batter.name() + ": " + Player.nameFor(hit));
 
             if (hit > 0 && hit < 4) {
                 // Note: only score if forced, not real baseball
-                score += (onbase + hit) % bases.length;
+                score += (onbase + hit) / bases.length;
                 onbase = (onbase + hit) % bases.length;
 
                 // Players move forward along the bases 'hit' bases.
