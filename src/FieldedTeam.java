@@ -1,24 +1,22 @@
 import java.util.List;
 
 /**
- * Created by mcarifio on 3/27/16.
+ * A Team has a locate, a name and a roster of players, e.g. new Team("Boston", "Red Sox", new List<Player>(new Player("John Lester")...)
  */
 public class FieldedTeam {
-    private List<Player> team;
+    private String locale;
+    private String name;
+    private List<Player> roster;
     private int position = 0;
 
-    public FieldedTeam(List<Player> team) {
-        if (team.size() != 9) {
-            throw new IllegalArgumentException(String.format("A fielded team has 9 players. Yours has {s}.", team.size()));
-        }
-        this.team = team;
+    public FieldedTeam(String locale, String name, List<Player> roster) {
+        this.locale = locale;
+        this.name = name;
+        this.roster = roster;
     }
 
     public Player nextBatter() {
-        this.position = (position + 1) % this.team.size();
-        return this.team.get(position);
+        this.position = (this.position + 1) % roster.size();
+        return this.roster.get(position);
     }
-
-
-
 }

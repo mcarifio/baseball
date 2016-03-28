@@ -7,15 +7,17 @@ import java.util.Random;
 
 public class Player {
 
+    String name;
     // Player's stats
     double average = 0.280;
 
-    public Player(double average) {
+    public Player(String name, double average) {
+        this.name = name;
         this.average = average;
     }
 
-    public Player() {
-
+    public Player(String name) {
+        this.name = name;
     }
 
 

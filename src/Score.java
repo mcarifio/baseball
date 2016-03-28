@@ -56,8 +56,8 @@ public class Score {
      * @param inningScore
      * @return
      */
-    public Score add(Score inningScore) {
-        this.visitor_scores(inningScore.visitor_score());
-        this.home_scores(inningScore.home_score());
+    public void add(Score inningScore) {
+        this.visitor += inningScore.visitor_score();
+        this.home += inningScore.home_score();
     }
 }
