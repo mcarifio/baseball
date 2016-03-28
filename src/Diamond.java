@@ -3,19 +3,17 @@
  */
 public class Diamond {
     private String name; // finalize during ctor?
-    TeamLocation at_bat = TeamLocation.VISTOR;
-    Team visitor, home;
+    Team[] teams;
+    int at_bat = 0;
 
     // TODO: should Game be a part of Diamond?
     public Diamond(String name, Team visitor, Team home) {
         this.name = name;
-        this.visitor = visitor;
-        this.home = home;
+        Team[] teams = new Team[] { visitor, home };
     }
 
     public String where() { return this.name; }
 
-    TeamLocation at_bat() { return this.at_bat; }
-    TeamLocation defending() { return TeamLocation.not(this.at_bat); }
-
+    Team at_bat() { return this.teams[this.at_bat]; }
+    Team defending() { return this.teams[(this.at_bat + 1) % 2]; }
 }
